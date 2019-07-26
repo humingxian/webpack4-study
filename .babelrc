@@ -1,0 +1,33 @@
+{
+  // 打包逻辑代码的时候用这个配置
+  // 用这个还要在逻辑代码文件中写 import "@babel/polyfill"
+  "presets": [
+    [
+      "@babel/preset-env", 
+      {
+        "useBuiltIns": "usage",
+        "targets": {
+          "chrome": "67"
+        },
+        "corejs": 2
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+  // 打包一个库时，用下面的配置
+  // "plugins": [
+  //   [
+  //     "@babel/plugin-transform-runtime",
+  //     {
+  //       "absoluteRuntime": false,
+  //       "corejs": 2,
+  //       "helpers": true,
+  //       "regenerator": true,
+  //       "useESModules": false
+  //     }
+  //   ]
+  // ]
+}
